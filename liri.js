@@ -30,5 +30,5 @@ function spotifyThisSong(song) {
     console.log(`Album: ` + songData.album.name)
     console.log(`****************************`)
   }
-});
+})
 }
