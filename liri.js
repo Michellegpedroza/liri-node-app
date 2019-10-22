@@ -1,12 +1,13 @@
 //Variables to require all node packages and files
 const dotenv = require(`dotenv`).config()
-const spotify = require(`node-spotify-api`)
-const moment = require(`moment`)
 const keys = require(`./keys.js`)
-const fs = require(`fs`)
 
 const spotify = new Spotify(key.spotify)
-const omdbKey = keys.omdb.API_KEY
+
+const spotify = require(`node-spotify-api`)
+const moment = require(`moment`)
+const fs = require(`fs`)
+
 
 const firstCommand = process.argv[2]
 const secondCommand = process.argv[3]
