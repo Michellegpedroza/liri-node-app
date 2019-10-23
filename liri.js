@@ -1,35 +1,35 @@
 //Variables to require all node packages and files
 const dotenv = require(`dotenv`).config()
-const keys = require(`./keys.js`)
-
-const spotify = new Spotify(key.spotify)
-
-const spotify = require(`node-spotify-api`)
-const moment = require(`moment`)
 const fs = require(`fs`)
+const keys = require(`./keys.js`)
+const Spotify = require(`node-spotify-api`)
+const moment = require(`moment`)
 
+const spotify = new Spotify(keys.spotify)
 
-const firstCommand = process.argv[2]
-const secondCommand = process.argv[3]
+//Capture the users input
+var action = process.argv[2]
+var request = process.argv[3]
 
+//Switch case for each instance
+switch (action) {
+  case `concert-this`:
+    bandsInTown(request)
+    break
 
-function spotifyThisSong(song) {
-  spotify.search({ type: 'track', query: song, limit: 1 }, function (e, data) {
-    if (e) {
-      console.log(`Error Occured:` + e)
-    }
-  } else {
-    for(let i = 0; i<data.tracks.items.length; i++) {
-    let songData = data.tracks.items[i]
-    //artist
-    console.log(`Artist: ` + songData.artists[0].name)
-    //song name
-    console.log(`Song: ` + songData.name)
-    //spotify preview link
-    console.log(`Preview URL: ` + songData.preview_url)
-    //album name
-    console.log(`Album: ` + songData.album.name)
-    console.log(`****************************`)
-  }
-})
+  case `spotify-this-song`:
+    spotifyThisSong(request)
+    break
+
+  case `movie-this`:
+    movieThis(request)
+    break
+
+  case `do-what-it-says`:
+    doWhatItSays(request)
+    break
+
+  case `default`:
+    console.log(`These Instructions are not Valid`)
+    break
 }
