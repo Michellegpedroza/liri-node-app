@@ -93,11 +93,13 @@ function movieThis() {
     })
 }
 
+//Function to retrieve song name on random.txt & get it's spotify info
 function doWhatItSays() {
   fs.readFile(`random.txt`, `utf8`, function (err, data) {
     if (err) {
       console.log(err)
     }
+
     let doItArr = data.split(`,`)
     let userResponse = doItArr[1]
 
@@ -112,5 +114,3 @@ function doWhatItSays() {
     })
   })
 }
-
-
