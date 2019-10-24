@@ -93,5 +93,6 @@ LIRI will be a command line node app that takes in parameters and gives you back
    * node liri.js movie-this
    <img width="1351" alt="movieThis" src="https://user-images.githubusercontent.com/51764119/67504593-861d8e80-f63e-11e9-9424-b919dc248ca7.png">
    
-   
+   * node liri.js do-what-it-says
+   <img width = "1351" alt="doWhatItSays" src="https://user-images.githubusercontent.com/51764119/67504771-e8768f00-f63e-11e9-8951-8a1621c64bb4.png">
      
