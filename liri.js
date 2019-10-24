@@ -9,23 +9,27 @@ const moment = require(`moment`)
 const spotify = new Spotify(keys.spotify)
 
 // Capture the users Input
-const action = process.argv[2]
-const userResponse = process.argv[3]
+let action = process.argv[2]
+let userResponse = process.argv[3]
 
 //Switch case for each action
 switch (action) {
   case `concert-this`:
     concertThis()
     break
+
   case `spotify-this-song`:
     spotifyThis()
     break
+
   case `movie-this`:
-    movies()
+    movieThis()
     break
+
   case `do-what-it-says`:
-    doThis()
+    doWhatItSays()
     break
+
   default:
     console.log(`Enter a valid search term, such as: `)
     console.log(`{concert-this},{spotify-this-song}, {movie-this}, or {do-what-it-says} followed by your request.`)
@@ -62,7 +66,30 @@ function spotifyThis() {
 
   // If users request is empty 
   if (userResponse === ``) {
-    userResponse = `The Sign`
+    let userResponse = `The Sign`
+  }
+}
+
+//Function to retrieve the users movie request
+function movieThis() {
+  axios.get(`http://www.omdbapi.com/?t=` + userResponse + `&y=&plot=short&apikey=` + keys.movies.id)
+    .then(function (response) {
+      //Console log the requested movies data
+      console.log(`Title: ` + response.data.Title)
+      console.log(`Release Year: ` + response.data.Year)
+      console.log(`IMDB rating: ` + response.data.imdbRating)
+      console.log(`Rotten Tomatoes Rating: ` + response.data.Ratings[1].Value)
+      console.log(`Country Produced: ` + response.data.Country)
+      console.log(`Language: ` + response.data.Language)
+      console.log(`Plot: ` + response.data.Plot)
+      console.log(`Actors: ` + response.data.Actors)
+    })
+
+  //If users movie request input is empty
+  if (userResponse === ``) {
+    let userResponse = `Mr. Nobody`
+    console.log(`If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>`)
+    console.log(`It's on Netflix!`)
   }
 }
 
