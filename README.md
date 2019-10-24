@@ -95,4 +95,22 @@ LIRI will be a command line node app that takes in parameters and gives you back
    
    * node liri.js do-what-it-says
    <img width = "1351" alt="doWhatItSays" src="https://user-images.githubusercontent.com/51764119/67504771-e8768f00-f63e-11e9-8951-8a1621c64bb4.png">
+   
+   
+  <h2>Technologies</h2>
+    *Node.js
+   
+   * NPM Packages:
+     * Node-Spotify-API (https://www.npmjs.com/package/node-spotify-api)
+     * DotEnv (https://www.npmjs.com/package/dotenv)
+     * Axios (https://www.npmjs.com/package/axios)
+     * Moment (https://www.npmjs.com/package/moment)
+  
      
+   * APIs:
+     * Bands In Town (http://www.artists.bandsintown.com/bandsintown-api)
+     * Spotify (https://developer.spotify.com/)
+     * OMDB (http://www.omdbapi.com)
+
+
+
