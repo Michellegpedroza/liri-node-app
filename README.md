@@ -88,6 +88,6 @@ LIRI will be a command line node app that takes in parameters and gives you back
    <img width="1351" alt="concertThis" src="https://user-images.githubusercontent.com/51764119/67503554-ac422f00-f63c-11e9-823b-7fda69585764.png">
    
    * node liri.js spotify-this-song
-   
+   <img width="1351" alt="spotifyThis" src= "https://user-images.githubusercontent.com/51764119/67504113-abf66380-f63d-11e9-847b-8d660ae5593f.png">
 
      
