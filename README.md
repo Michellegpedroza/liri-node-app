@@ -91,5 +91,7 @@ LIRI will be a command line node app that takes in parameters and gives you back
    <img width="1351" alt="spotifyThis" src= "https://user-images.githubusercontent.com/51764119/67504113-abf66380-f63d-11e9-847b-8d660ae5593f.png">
 
    * node liri.js movie-this
-   <img width="1351" alt="concertThis" src="https://user-images.githubusercontent.com/51764119/67504462-40f95c80-f63e-11e9-9cfa-199351c8a239.png">
+   <img width="1351" alt="movieThis" src="https://user-images.githubusercontent.com/51764119/67504593-861d8e80-f63e-11e9-9424-b919dc248ca7.png">
+   
+   
      
