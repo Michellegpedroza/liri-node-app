@@ -83,13 +83,34 @@ function movieThis() {
       console.log(`Language: ` + response.data.Language)
       console.log(`Plot: ` + response.data.Plot)
       console.log(`Actors: ` + response.data.Actors)
-    })
 
-  //If users movie request input is empty
-  if (userResponse === ``) {
-    let userResponse = `Mr. Nobody`
-    console.log(`If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>`)
-    console.log(`It's on Netflix!`)
-  }
+      //If users movie request input is empty
+      if (userResponse === ``) {
+        let userResponse = `mr nobody`
+        console.log(`If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>`)
+        console.log(`It's on Netflix!`)
+      }
+    })
 }
+
+function doWhatItSays() {
+  fs.readFile(`random.txt`, `utf8`, function (err, data) {
+    if (err) {
+      console.log(err)
+    }
+    let doItArr = data.split(`,`)
+    let userResponse = doItArr[1]
+
+    spotify.search({ type: `track`, query: userResponse }, function (err, data) {
+
+      //Log song info from random.txt
+      const songRequested = data.tracks.items
+      console.log(`Artist: ` + songRequested[0].artists[0].name)
+      console.log(`Song Name: ` + songRequested[0].name)
+      console.log(`Preview Link: ` + songRequested[0].preview_url)
+      console.log(`Album: ` + songRequested[0].album.name)
+    })
+  })
+}
+
 
